@@ -1,12 +1,12 @@
 const express = require('express');
-const { db } = require('./models/userModel');
+const { db } = require('./src/models/userModel');
 const app = express();
 const port = process.env.PORT || 5000;
-const mongo = require('./models/db')
-const {User} = require('./models/userModel')
-const {Cred} = require('./models/userModel')
+const mongo = require('./src/models/db')
+const {User} = require('./src/models/userModel')
+const {Cred} = require('./src/models/userModel')
 const cors = require('cors');
-const authRouter = require('./Routes/AuthRouter')
+const authRouter = require('./src/Routes/AuthRouter')
 app.use(cors());
 app.use(express.json());
 app.use('/auth',authRouter)
